@@ -1,0 +1,134 @@
+/* Styling Global & Reset Sederhana */
+* {
+    box-sizing: border-box;
+}
+
+/* ---------------------------------- */
+/* 1. GANTI SELURUH BACKGROUND JADI IMG.PNG */
+/* ---------------------------------- */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Mengubah font yang lebih modern */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    /* Menggunakan img.png sebagai latar belakang penuh */
+    background: url('jepang.png') no-repeat center center fixed; 
+    background-size: cover; 
+}
+
+/* ---------------------------------- */
+/* 2. KOTAK PUTIH TENGAH JADI HITAM */
+/* ---------------------------------- */
+.login-card {
+    background-color: #1a1a1a; /* Hitam gelap */
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2); /* Bayangan putih untuk kontras */
+    width: 100%;
+    max-width: 350px;
+    color: white; /* Teks default di dalam card putih */
+    text-align: center;
+}
+
+/* Styling Header "SELAMAT DATANG" */
+.header {
+    font-size: 2.2em;
+    font-weight: 800; 
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.header .accent {
+    color: #00ff26; /* Warna pink dari desain asli */
+}
+
+/* Placeholder kosong di bawah header */
+.placeholder-line {
+    height: 10px;
+    width: 100px;
+    background-color: #00ff3c;
+    margin: 0 auto 50px auto;
+    border-radius: 5px;
+}
+
+/* Styling Input Field Group */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1em;
+    color: white; /* Teks input putih */
+    border: none;
+    border-bottom: 1px solid #777; /* Garis bawah tipis abu-abu */
+    outline: none;
+    background: transparent;
+    transition: border-bottom-color 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom-color: #69ff8a; /* Garis bawah pink saat fokus */
+}
+
+/* Styling Placeholder (untuk emulasi label floating/placeholder desain) */
+.input-group input::placeholder {
+    color: #aaa; /* Warna placeholder abu-abu terang */
+    opacity: 1; 
+    font-size: 1em;
+}
+
+/* ---------------------------------- */
+/* 3. KOTAK PINK LOGIN JADI PUTIH */
+/* ---------------------------------- */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    margin: 20px 0 0 0; /* Ubah margin atas untuk memberi ruang pesan error */
+    background-color: white; /* Tombol jadi putih */
+    color: #1a1a1a; /* Teks tombol jadi hitam */
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    letter-spacing: 1px;
+}
+
+.login-button:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+
+.error-text {
+  
+    height: 1.5em; 
+    line-height: 1.5em;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #ff0000; 
+    margin: -10px 0 15px 0; /* Posisikan di atas tombol */
+}
+
+/* Link Lupa Password? */
+.forgot-password {
+    display: block;
+    margin-top: 20px;
+    color: #00ff11; 
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}

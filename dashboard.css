@@ -1,0 +1,176 @@
+
+
+:root {
+    --primary-red: #FF0000; 
+    --main-card-color: #02b002; /* HIJAU TEPAT */
+    --text-color-dark: #ffffff; /* Teks di sidebar akan jadi hitam */
+    --text-color-light: #FFFFFF; /* Teks di card hijau jadi putih */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    background-color: #000000; /* Fallback */
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    
+   
+    
+    background-size: cover;          
+    background-position: center;     
+    background-attachment: fixed;
+    /* OPSIONAL: Gelapkan gambar sedikit agar teks lebih mudah dibaca di atasnya */
+    /* filter: brightness(0.8); */
+}
+
+/* CONTAINER UTAMA - Sekarang Transparan */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 250px 1fr; 
+    width: 100%;
+    /* Container utama transparan agar gambar background terlihat */
+    background: transparent; 
+}
+
+/* ================== SIDEBAR (Navigasi Kiri) ================== */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px 20px 20px;
+    /* Sidebar transparan - GARIS PEMISAH DIHAPUS agar persis gambar */
+    background: transparent; 
+}
+
+/* Logo/Username */
+.logo-area {
+    margin-bottom: 30px;
+    color: var(--primary-red); /* Warna Merah */
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    /* Outline Teks untuk Logo agar terbaca di BG Gambar */
+    text-shadow: 1px 1px 0 #000000, -1px -1px 0 #000000, 0 0 5px rgba(0,0,0,0.5); 
+}
+
+.logo-icon {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+/* Navigasi Menu */
+.menu-top {
+    margin-bottom: auto; 
+}
+
+.nav-item {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+    /* Outline Teks untuk Navigasi agar terbaca di BG Gambar */
+    text-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #000000, 0 0 5px rgba(0,0,0,0.5);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+    color: var(--primary-red); /* Ikon Navigasi Merah */
+}
+
+/* Navigasi Aktif dan Hover */
+.nav-item.active {
+    color: var(--primary-red);
+}
+.nav-item.active .nav-icon {
+    color: var(--primary-red);
+}
+
+.nav-item:hover {
+    color: var(--primary-red);
+}
+.nav-item:hover .nav-icon {
+    color: var(--primary-red);
+}
+
+/* ================== KONTEN UTAMA (Kotak Hijau) ================== */
+
+.main-content-wrapper {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card-v2 {
+    background: var(--main-card-color); /* HIJAU GREEN SCREEN */
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    padding: 50px 60px;
+    border-radius: 20px; 
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2); 
+    color: var(--text-color-light); /* Teks Putih */
+}
+
+/* Header/Avatar Area */
+.avatar-header {
+    height: 70px; 
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.profile-avatar {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover; 
+    position: absolute;
+    top: -55px; 
+    left: 10px;
+    border: 5px solid #FFFFFF; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+}
+
+/* Status Badge - Dibiarkan off agar persis gambar terakhir */
+/* .status-badge {} */ 
+
+/* Body Konten Teks */
+.profile-body {
+    padding-top: 10px; 
+}
+
+.profile-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+    position: relative;
+    color: var(--text-color-dark); /* JUDUL HITAM */
+}
+
+/* Teks Utama di dalam Card */
+.profile-text-v2 {
+    font-size: 1.1rem; 
+    line-height: 1.7; 
+    font-weight: 400;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    color: var(--text-color-dark); /* Teks Body HITAM */
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>via</title>
+    <!-- Memuat file CSS eksternal -->
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="header">
+            <span class="accent">WE</span>LCOME
+            <br>
+            AG<span class="accent">ENT</span>
+        </div>
+
+        <!-- Placeholder line dari desain -->
+        <div class="placeholder-line"></div>
+
+        <!-- Form memanggil fungsi handleLogin saat disubmit -->
+        <form onsubmit="return handleLogin(event)"> 
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username" required> 
+            </div>
+            
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+            </div>
+
+            <!-- Elemen untuk Menampilkan Pesan Kesalahan/Sukses -->
+            <p id="error-message" class="error-text"></p>
+    
+            <button type="submit" class="login-button">
+                LOGIN
+            </button>
+        </form>
+
+        <a href="#" class="forgot-password">Lupa Password?</a>
+    </div>
+
+    <!-- ----------------------------------------------------------------- -->
+    <!-- LOGIKA JAVASCRIPT UNTUK CEK LOGIN -->
+    <!-- ----------------------------------------------------------------- -->
+    <script>
+        // GANTI NILAI DI BAWAH INI DENGAN USERNAME DAN PASSWORD YANG BENAR!
+        const CORRECT_USERNAME = "zeztz";
+        const CORRECT_PASSWORD = "777";
+        const DASHBOARD_URL = "dashboard.html"; // URL tujuan redirect
+
+        function handleLogin(event) {
+            // Mencegah form submit/reload halaman secara default
+            event.preventDefault(); 
+
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+            const errorMessageElement = document.getElementById('error-message');
+
+            // 1. Bersihkan pesan kesalahan sebelumnya dan atur warna default (pink)
+            errorMessageElement.textContent = ""; 
+            errorMessageElement.style.color = '#ff000'; // Warna default
+
+            if (usernameInput !== CORRECT_USERNAME) {
+              
+                errorMessageElement.textContent = "zero : enter your correct username and password agent";
+                document.getElementById('username').focus();
+            } else if (passwordInput !== CORRECT_PASSWORD) {
+                // Pesan Error untuk Password (Diubah menjadi Merah)
+                errorMessageElement.textContent = "zero : enter your correct Password and username agent";
+                errorMessageElement.style.color = '#ff4d4d'; // MERAH!
+                document.getElementById('password').focus();
+            } else {
+                // LOGIN BERHASIL (Hijau)
+                errorMessageElement.textContent = "Login Berhasil! Mengarahkan ke Dashboard...";
+                errorMessageElement.style.color = '#25D366'; // Warna hijau untuk sukses
+                
+                // LOGIKA REDIRECT: Masuk ke dashboard.html setelah 1.5 detik
+                setTimeout(() => { 
+                    window.location.href = DASHBOARD_URL; 
+                }, 1500); 
+            }
+            
+            return false; // Kembali false agar form tidak submit
+        }
+    </script>
+
+</body>
+</html>
